@@ -3,7 +3,12 @@
     <section class="title_head ellipsis" v-if="headTitle">
       <span class="title_text">{{headTitle}}</span>
     </section>
-    <span class="head_title">登录|注册</span>
+    <router-link :to="userInfo?'/profile':'/login'" v-if="signinUp" class="head_login">
+      <svg class="user_avatar" v-if="userInfo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
+      </svg>
+      <span class="head_title" v-else>登录|注册</span>
+    </router-link>
   </header>
 </template>
 

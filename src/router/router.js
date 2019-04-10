@@ -2,6 +2,8 @@ import App from '../App'
 
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
 const city = r => require.ensure([], () => r(require('../page/city/city')), 'city')
+const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
+const profile = r => require.ensure([], () => r(require('../page/profile/profile')), 'profile')
 
 export default [{
   path: '/',
@@ -21,6 +23,16 @@ export default [{
     {
       path: '/city/:cityid',
       component: city
+    },
+    //登录注册页
+    {
+      path: '/login',
+      component: login
+    },
+    //个人信息页
+    {
+      path: '/profile',
+      component: profile
     },
   ]
 }]
